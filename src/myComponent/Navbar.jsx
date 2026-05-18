@@ -1,19 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
+    <>
     <div>
   <div
     className="
-      flex flex-col
-      md:flex-row
+      hidden
+      md:flex flex-row
       justify-start md:justify-between
       items-center
       w-30 md:w-full
       h-screen md:h-auto
       border border-gray-300
       shadow-md
-      bg-gray-400
+      bg-green-400
       py-5
       px-5
     "
@@ -29,122 +32,69 @@ const Navbar = () => {
     {/* Menu */}
     <div className="flex flex-col md:flex-row gap-10 md:gap-20">
       
-      <div className="cursor-pointer hover:text-red-500">
+      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
         <span>Home</span>
       </div>
 
-      <div className="cursor-pointer hover:text-red-500">
+      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
         <span>Templates</span>
       </div>
 
-      <div className="cursor-pointer hover:text-red-500">
+      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
         <span>Contact us</span>
       </div>
 
-      <div className="cursor-pointer hover:text-red-500 md:hover:text-red-500">
+      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
         <span>About us</span>
       </div>
 
     </div>
   </div>
 </div>
+
+<div className="flex justify-between md:hidden items-center bg-green-300 px-5 py-4">
+  <h1 >ID-Generator</h1>
+      <button className="text-2xl" onClick={()=>setOpen(!open)}>☰</button>
+
+
+<div className=  {`fixed
+          top-0
+          left-0
+          h-screen
+          w-52
+          bg-green-400
+          transform
+          transition-transform
+          duration-300
+          md:hidden
+          ${open ? "translate-x-0" : "-translate-x-full"}
+        `}>
+     <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
+      
+      <div className="cursor-pointer hover:text-white bg-green-200 hover:bg-green-300 flex items-center justify-center rounded-md py-5 px-full">
+        <span>Home</span>
+      </div>
+
+      <div className="cursor-pointer hover:text-white hover:bg-green-300 flex items-center justify-center rounded-md py-5 px-full">
+        <span>Templates</span>
+      </div>
+
+      <div className="cursor-pointer hover:text-white hover:bg-green-300 flex items-center justify-center rounded-md py-5 px-full">
+        <span>Contact us</span>
+      </div>
+
+      <div className="cursor-pointer hover:text-white hover:bg-green-300  flex items-center justify-center rounded-md py-5 px-full">
+        <span>About us</span>
+      </div>
+
+    </div>
+
+</div>
+</div>
+</>
   );
 };
 
 export default Navbar;
 
 
-
-
-
-
-// import React, { useState } from "react";
-
-// function Navbar() {
-//   const [open, setOpen] = useState(false);
-
-//   return (
-//     <>
-//       {/* Desktop Navbar */}
-//       <div className="hidden md:flex justify-between items-center bg-gray-400 px-10 py-5">
-
-//         <h1 className="text-2xl font-bold">
-//           ID-Generator
-//         </h1>
-
-//         <div className="flex gap-10">
-//           <span className="cursor-pointer hover:text-red-500">
-//             Home
-//           </span>
-
-//           <span className="cursor-pointer hover:text-red-500">
-//             Templates
-//           </span>
-
-//           <span className="cursor-pointer hover:text-red-500">
-//             Contact
-//           </span>
-
-//           <span className="cursor-pointer hover:text-red-500">
-//             About
-//           </span>
-//         </div>
-//       </div>
-
-//       {/* Mobile Top Bar */}
-//       <div className="flex md:hidden justify-between items-center bg-gray-400 px-5 py-4">
-
-//         <h1 className="text-2xl font-bold">
-//           ID-Generator
-//         </h1>
-
-//         <button
-//           onClick={() => setOpen(!open)}
-//           className="text-3xl"
-//         >
-//           ☰
-//         </button>
-//       </div>
-
-//       {/* Mobile Sidebar */}
-//       <div
-//         className={`
-//           fixed
-//           top-0
-//           left-0
-//           h-screen
-//           w-52
-//           bg-gray-500
-//           transform
-//           transition-transform
-//           duration-300
-//           md:hidden
-//           ${open ? "translate-x-0" : "-translate-x-full"}
-//         `}
-//       >
-
-//         <div className="flex flex-col gap-10 mt-20 ml-5 text-white">
-
-//           <span className="cursor-pointer hover:text-red-400">
-//             Home
-//           </span>
-
-//           <span className="cursor-pointer hover:text-red-400">
-//             Templates
-//           </span>
-
-//           <span className="cursor-pointer hover:text-red-400">
-//             Contact
-//           </span>
-
-//           <span className="cursor-pointer hover:text-red-400">
-//             About
-//           </span>
-
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Navbar;
