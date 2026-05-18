@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {FaTimes} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -72,7 +73,10 @@ const Navbar = () => {
           md:hidden
           ${open ? "translate-x-0" : "-translate-x-full"}
         `}>
+      <FaTimes className="text-2xl absolute top-5 right-5 cursor-pointer" onClick={()=>setOpen(false)}/>
+
      <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
+
       
       <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
         <Link to="/">Home</Link>

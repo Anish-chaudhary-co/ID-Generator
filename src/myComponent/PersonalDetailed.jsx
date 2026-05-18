@@ -1,12 +1,12 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
-const PersonaDetailed = () => {
+const PersonalDetailed = () => {
   return (
     <>
     <form
         action=""
         className="flex items-center justify-center h-screen"
-        onSubmit={handleSubmit}
       >
         <div className="flex items-center justify-center h-screen">
           <div className="flex flex-col items-center justify-center border w-200">
@@ -21,42 +21,36 @@ const PersonaDetailed = () => {
                 type="text"
                 className="border"
                 name="name"
-                onChange={handleChange}
               />
               <label>Father's name : </label>
               <input
                 type="text"
                 className="border"
                 name="fathersName"
-                onChange={handleChange}
               />
               <label>Mother's name : </label>
               <input
                 type="text"
                 className="border"
                 name="mothersName"
-                onChange={handleChange}
               />
               <label>Date of birth : </label>
               <input
                 type="date"
                 className="border"
                 name="dateOfBirth"
-                onChange={handleChange}
               />
               <label>Address : </label>
               <input
                 type="text"
                 className="border"
                 name="address"
-                onChange={handleChange}
               />
               <label>Phone number : </label>
               <input
                 type="number"
                 className="border"
                 name="phoneNumber"
-                onChange={handleChange}
               />
               <label htmlFor="photo">Photo : </label>
               <input
@@ -64,14 +58,13 @@ const PersonaDetailed = () => {
                 id="photo"
                 className="border"
                 name="photo"
-                onChange={handleChange}
               />
-              <button
+              <Link to="/generatedID"
                 type="submit"
                 className="border p-2 bg-green-400 rounded"
               >
                 Generate ID
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -80,4 +73,4 @@ const PersonaDetailed = () => {
   );
 }
 
-export default PersonaDetailed;
+export default PersonalDetailed;
