@@ -1,30 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Introduction = () => {
+  const [show, setShow] = useState(false);
   return (
-    <div className="flex flex-col md:flex-row mt-10 gap-10">
-      <div className="flex flex-col gap-4 bg-green-500 py-20 w-[50%] rounded-lg">
-        <h1 className="text-3xl font-bold">Welcome to ID Card Generator</h1>
-        <div className="border rounded-lg px-6 py-20">lol</div>
+    <>
+      <div className="flex flex-col gap-9 mt-10 md:m-30 md:gap-30 md:flex-row">
 
-        <div>
-          <button className="border py-2 px-9 text-2xl rounded-lg">Templates</button>
+        <div className="m-2 rounded-lg p-10 flex flex-col gap-5 shadow-2xl shadow-gray-300 md:h-107 md:w-[60%]">
+          <h1 className="text-2xl font-bold">
+            Create <br></br> Professional<br></br> Identity Cards
+          </h1>
+          <span className="text-gray-500 md:mt-10">
+            Generate high-Quality, print-ready ID cards in seconds. Choose from
+            our premium templates or build your own custom design with out
+            drag-and-drop editor.
+          </span>
+          <div className="flex gap-4 ml-3 md:mt-17">
+            <button className="py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl">Browse Templates</button>
+            <button className="border py-3 px-6 rounded-lg border-gray-300">Build Your Own</button>
+          </div>
+        </div>
+
+        <div className="m-2">
+          <div className="border border-gray-200 px-37 py-50 rounded-xl shadow-xl shadow-gray-300 mb-20">Templates</div>
         </div>
       </div>
-
-      <div className="p-5 bg-orange-500 border-white border-2 rounded-lg py-20 w-[50%]">
-        <h1 className="text-2xl font-bold">Introduction</h1>
-        <span className="text-sm text-gray-800">
-        This is a simple id card generator project built using react js. It
-        allows users to input their details and generates a unique ID card based
-        on the provided information. The generated ID card includes the user's
-        name, date of birth, address, phone number, and a randomly generated ID
-        number. The project is designed to be user-friendly and visually
-        appealing, making it easy for users to create their own ID cards with
-        just a few clicks.
-        </span>
-      </div>
-    </div>
+    </>
   );
 };
 

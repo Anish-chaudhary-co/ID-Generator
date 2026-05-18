@@ -14,18 +14,17 @@ const Navbar = () => {
       items-center
       w-30 md:w-full
       h-screen md:h-auto
-      border border-gray-300
-      shadow-md
-      bg-green-400
       py-5
       px-5
+      shadow-gray-300
+      shadow-lg
     "
   >
     
     {/* Logo */}
     <div className="mb-10 md:mb-0">
       <span className="font-bold text-xl">
-        ID-Generator
+        IDGen
       </span>
     </div>
 
@@ -52,8 +51,8 @@ const Navbar = () => {
   </div>
 </div>
 
-<div className="flex justify-between md:hidden items-center bg-green-300 px-5 py-4">
-  <h1 >ID-Generator</h1>
+<div className="flex justify-between md:hidden items-center shadow-gray-200 shadow-lg px-5 py-4">
+  <h1 >IDGen</h1>
       <button className="text-2xl" onClick={()=>setOpen(!open)}>☰</button>
 
 
@@ -62,7 +61,10 @@ const Navbar = () => {
           left-0
           h-screen
           w-52
-          bg-green-400
+          bg-gray-200
+          shadow-lg
+          shadow-gray-600
+          rounded-2xl
           transform
           transition-transform
           duration-300
@@ -71,19 +73,19 @@ const Navbar = () => {
         `}>
      <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
       
-      <div className="cursor-pointer hover:text-white bg-green-200 hover:bg-green-300 flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
         <span>Home</span>
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-green-300 flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
         <span>Templates</span>
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-green-300 flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
         <span>Contact us</span>
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-green-300  flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-green-200  flex items-center justify-center rounded-md py-5 px-full">
         <span>About us</span>
       </div>
 
