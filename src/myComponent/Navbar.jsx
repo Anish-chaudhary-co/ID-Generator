@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -32,19 +33,19 @@ const Navbar = () => {
     <div className="flex flex-col md:flex-row gap-10 md:gap-20">
       
       <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <span>Home</span>
+        <Link to="/">Home</Link>
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <span>Templates</span>
+        <Link to="/templates">Templates</Link>
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <span>Contact us</span>
+        <Link to="/contact">Contact us</Link>
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <span>About us</span>
+        <Link to="/about">About us</Link>
       </div>
 
     </div>
@@ -74,19 +75,19 @@ const Navbar = () => {
      <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
       
       <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
-        <span>Home</span>
+        <Link to="/">Home</Link>
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
-        <span>Templates</span>
+        <Link to="/templates">Templates</Link >
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
-        <span>Contact us</span>
+        <Link to="/contact">Contact us</Link>
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-green-200  flex items-center justify-center rounded-md py-5 px-full">
-        <span>About us</span>
+        <Link to="/about">About us</Link>
       </div>
 
     </div>

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const DetailInput = () => {
+const PersonaDetailed = () => {
   return (
     <>
-      <form
+    <form
         action=""
         className="flex items-center justify-center h-screen"
         onSubmit={handleSubmit}
@@ -78,6 +78,6 @@ const DetailInput = () => {
       </form>
     </>
   );
-};
+}
 
-export default DetailInput;
+export default PersonaDetailed;

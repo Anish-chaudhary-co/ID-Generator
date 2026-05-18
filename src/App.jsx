@@ -1,15 +1,9 @@
-import { useState } from "react";
-import Navbar from "./myComponent/Navbar";
-import Introduction from "./myComponent/Introduction";
-import TemplatesUI from "./myComponent/TempletesUI";
-import Footer from "./myComponent/Footer";
+import{useState} from "react";
+import AppRoutes from "./Routes/AppRoutes";
 function App() {
   return (
     <>
-    <Navbar/>
-    <Introduction/>
-    <TemplatesUI />
-    <Footer/>
+      <AppRoutes />
     </>
 
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const TemplatesUI = () => {
   return (
-    <div></div>
+    <div>This is the Templates page</div>
   )
 }
 

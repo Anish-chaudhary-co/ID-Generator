@@ -16,8 +16,12 @@ const Introduction = () => {
             drag-and-drop editor.
           </span>
           <div className="flex gap-4 ml-3 md:mt-17">
-            <button className="py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl">Browse Templates</button>
-            <button className="border py-3 px-6 rounded-lg border-gray-300">Build Your Own</button>
+            <button className="py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl">
+              Browse Templates
+            </button>
+            <button className="border py-3 px-6 rounded-lg border-gray-300">
+              Build Your Own
+            </button>
           </div>
         </div>
 
