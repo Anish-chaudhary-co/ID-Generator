@@ -1,76 +1,53 @@
-import React from 'react'
-import {Link} from "react-router-dom";
+import React from "react";
 
 const PersonalDetailed = () => {
   return (
-    <>
-    <form
-        action=""
-        className="flex items-center justify-center h-screen"
-      >
-        <div className="flex items-center justify-center h-screen">
-          <div className="flex flex-col items-center justify-center border w-200">
-            <span>Id Generator</span>
-            <span>
-              To generate first of all you have to provide your some personal
-              information to generate proper Id Card.
-            </span>
-            <div className="flex flex-col items-start justify-start gap-2 mt-4 mb-4">
-              <label>Name : </label>
-              <input
-                type="text"
-                className="border"
-                name="name"
-              />
-              <label>Father's name : </label>
-              <input
-                type="text"
-                className="border"
-                name="fathersName"
-              />
-              <label>Mother's name : </label>
-              <input
-                type="text"
-                className="border"
-                name="mothersName"
-              />
-              <label>Date of birth : </label>
-              <input
-                type="date"
-                className="border"
-                name="dateOfBirth"
-              />
-              <label>Address : </label>
-              <input
-                type="text"
-                className="border"
-                name="address"
-              />
-              <label>Phone number : </label>
-              <input
-                type="number"
-                className="border"
-                name="phoneNumber"
-              />
-              <label htmlFor="photo">Photo : </label>
-              <input
-                type="file"
-                id="photo"
-                className="border"
-                name="photo"
-              />
-              <Link to="/generatedID"
-                type="submit"
-                className="border p-2 bg-green-400 rounded"
-              >
-                Generate ID
-              </Link>
-            </div>
+    <div className="m-4 border border-gray-400 shadow-lg rounded-lg p-6 md:w-[500px]">
+      
+      <div className="mb-8">
+        <h1 className="font-bold text-4xl mb-2">
+          Create Your Digital Identity
+        </h1>
+
+        <span>
+          Enter your detail below to generate a secure,
+          verifiable digital ID card instantly.
+        </span>
+      </div>
+
+      <div className="flex justify-end mb-4">
+        <span>Personal Info:</span>
+      </div>
+
+      <div className="flex flex-col gap-6">
+
+        <div className="flex flex-col gap-4">
+          <div>
+            <label>FIRST NAME :</label>
+            <input className="border w-full p-2" type="text" />
+          </div>
+
+          <div>
+            <label>LAST NAME :</label>
+            <input className="border w-full p-2" type="text" />
           </div>
         </div>
-      </form>
-    </>
+
+        <div className="flex flex-col gap-4">
+          <div>
+            <label>PROFESSIONAL TITLE</label>
+            <input className="border w-full p-2" type="text" />
+          </div>
+
+          <div>
+            <label>EMAIL ADDRESS</label>
+            <input className="border w-full p-2" type="email" />
+          </div>
+        </div>
+
+      </div>
+    </div>
   );
-}
+};
 
 export default PersonalDetailed;

@@ -1,9 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import Navbar from '../myComponent/Navbar'
 
 const EmptyLayout = () => {
   return (
-    <Outlet />
+    <div>
+      <Navbar/>
+      <main>   
+      <Outlet />
+      </main>
+    </div>
+    
   )
 }
 

@@ -22,13 +22,14 @@ const AppRoutes = () => {
             <Route path='templateShow' element={<TemplateShow/>}/>
             <Route path='about' element={<About/>}/>
             <Route path='contact' element={<Contact/>}/>
-            <Route path='template' element={<Template/>}/>  
             <Route path='generatedID' element={<GeneratedID/>}/>
         </Route>
 
         <Route path='/' element={<EmptyLayout/>}>
         {/* this is for empty layout without navbar and footer */}
             <Route path='personalDetailed' element={<PersonalDetailed/>}/>
+            <Route path='template' element={<Template/>}/>  
+
             
         </Route>
     </Routes>
