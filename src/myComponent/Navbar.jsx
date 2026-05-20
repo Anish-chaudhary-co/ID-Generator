@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <Link to="/templates">Templates</Link>
+        <Link to="/template">Templates</Link>
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
@@ -83,7 +83,7 @@ const Navbar = () => {
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
-        <Link to="/templates">Templates</Link >
+        <Link to="/template">Templates</Link >
       </div>
 
       <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
