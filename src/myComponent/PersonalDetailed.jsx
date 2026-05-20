@@ -1,6 +1,7 @@
 import React from "react";
 
 const PersonalDetailed = () => {
+  alert("You can fill only required info : ")
   return (
     <div className="m-4 border border-gray-400 shadow-lg rounded-lg p-6 md:w-[500px]">
       
@@ -24,28 +25,89 @@ const PersonalDetailed = () => {
         <div className="flex flex-col gap-4">
           <div>
             <label>FIRST NAME :</label>
-            <input className="border w-full p-2" type="text" />
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
           </div>
 
           <div>
             <label>LAST NAME :</label>
-            <input className="border w-full p-2" type="text" />
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <div>
-            <label>PROFESSIONAL TITLE</label>
-            <input className="border w-full p-2" type="text" />
+            <label>PROFESSIONAL TITLE : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
           </div>
 
           <div>
-            <label>EMAIL ADDRESS</label>
-            <input className="border w-full p-2" type="email" />
+            <label>ORGANIZATION NAME : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+          </div>
+
+          <div>
+            <label>ADDRESS : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+          </div>
+
+          <div>
+            <label> DATE OF BIRTH : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="date" />
+          </div>
+
+          <div>
+            <label> LEVEL : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+          </div>
+
+          <div>
+            <label>EMAIL ADDRESS : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="email" />
+          </div>
+          <div>
+            <label>CONTACT NO : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="email" />
+          </div>
+        </div>
+
+        <div>
+          <label>GENDER</label>
+          <div className="flex gap-5">
+            <div>
+            <input type="radio"  name="gender"/><label>Male</label>
+            </div>
+
+            <div>
+            <input type="radio" name="gender"/><label>Female</label>
+            </div>
+
+            <div>
+            <input type="radio" name="gender"/><label>Others</label>
+            </div>
           </div>
         </div>
 
       </div>
+
+      <div className="flex flex-col mt-3">
+        <label>UPLOAD PHOTO</label>
+        <input type="file" className="border"/>
+      </div>
+
+      <div className="mt-5">
+            <label> VALIDITY : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+          </div>
+
+          <div>
+            <label> CARD NO : </label>
+            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+          </div>
+
+          <div className="flex justify-center items-center mt-4">
+            <button className="px-5 py-2 bg-blue-500 text-white text-2xl font-bold rounded-lg">Generate</button>
+          </div>
+
     </div>
   );
 };
