@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 
 import Templates1 from "../assets/templates1.png";
@@ -13,6 +13,7 @@ import Templates5 from "../assets/templates5.png";
 
 
 const Templates = () => {
+  // const [image,setImage] = {};
   return (
     <>
     <div className="m-4">
@@ -21,6 +22,7 @@ const Templates = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 md:m-9">
         <Link to="/personalDetailed" className="bg-gray-400 m-2 border border-gray-50 shadow-2xl rounded-lg overflow-hidden md:overflow-hidden h-[35rem] md:h-[35rem] md:w-90">
           <img
+          // onClick={setImage({Templates1})}
             className="h-full w-full object-cover"
             src={Templates1}
             alt="Template"
@@ -31,6 +33,7 @@ const Templates = () => {
         </Link>
         <Link to="/personalDetailed" className="bg-gray-400 m-2 border border-gray-50 shadow-2xl rounded-lg overflow-hidden md:overflow-hidden md:h-[40rem] md:w-90">
           <img
+          // onClick={setImage({Templates1})}
             className="h-full w-full object-cover"
             src={Templates3}
             alt="Templates"

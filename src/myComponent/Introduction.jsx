@@ -9,7 +9,7 @@ const Introduction = () => {
     <>
       <div className="flex flex-col gap-9 mt-10 md:m-30 md:gap-30 md:flex-row">
         <div className="m-2 rounded-lg p-10 flex flex-col gap-5 shadow-2xl shadow-gray-300 md:h-107 md:w-[60%]">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-3xl font-bold">
             Create <br></br> Professional<br></br> Identity Cards
           </h1>
           <span className="text-gray-500 md:mt-10">
@@ -17,7 +17,7 @@ const Introduction = () => {
             our premium templates or build your own custom design with out
             drag-and-drop editor.
           </span>
-          <div className="flex gap-4 ml-3 md:mt-17">
+          <div className="flex gap-4 ml-3 md:mt-14">
             <Link
               to="/template"
               className="py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl"
@@ -39,8 +39,8 @@ const Introduction = () => {
     w-full 
     max-w-[650px] 
     h-[250px] 
-    sm:h-[300px] 
     md:h-[430px]
+    md:w-[40rem]
     rounded-xl 
     overflow-hidden 
     shadow-xl 
