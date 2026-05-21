@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../myComponent/Navbar'
+import CopyRight from '../myComponent/CopyRight';
 
 const EmptyLayout = () => {
   return (
@@ -9,6 +10,7 @@ const EmptyLayout = () => {
       <main>   
       <Outlet />
       </main>
+      <CopyRight/>
     </div>
     
   )

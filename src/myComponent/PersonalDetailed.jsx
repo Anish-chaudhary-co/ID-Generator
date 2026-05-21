@@ -1,8 +1,44 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import {useContext, useState} from "react";
+import { useNavigate} from "react-router-dom";
+import { FormContext } from "../Context/Context/FormContext";
 const PersonalDetailed = () => {
-  alert("You can fill only required info : ")
+
+  const {setSubmittedData} = useContext(FormContext);
+  const Navigate = useNavigate();
+
+
+   const [formData, setFormData] = useState({
+        FirstName : "",
+        SecondName: "",
+        profession: "",
+        organization: "",
+        address : "",
+        DOB: "",
+        level: "",
+        Email: "",
+        contact: "",
+        gender : "",
+        img : "",
+        validity : "",
+        cardNo : ""
+    });
+
+    const handleChange = (e) => {
+      e.preventDefault(); 
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+
+  };
+
+  const handleSubmit = () => {
+    setSubmittedData(formData);
+
+    // GO TO PREVIEW PAGE
+    Navigate("/generatedID");
+  };
+
   return (
     <div>
     <div className="m-4 border border-gray-400 shadow-lg rounded-lg p-6 md:w-[500px]">
@@ -27,48 +63,48 @@ const PersonalDetailed = () => {
         <div className="flex flex-col gap-4">
           <div>
             <label>FIRST NAME :</label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="FirstName" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 
           <div>
             <label>LAST NAME :</label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="SecondName" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <div>
             <label>PROFESSIONAL TITLE : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="profession" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 
           <div>
             <label>ORGANIZATION NAME : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="organization" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 
           <div>
             <label>ADDRESS : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="address" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 
           <div>
             <label> DATE OF BIRTH : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="date" />
+            <input name="DOB" className="w-full p-2 rounded-sm bg-gray-300" type="date" onChange={handleChange}/>
           </div>
 
           <div>
             <label> LEVEL : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="level" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 
           <div>
             <label>EMAIL ADDRESS : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="email" />
+            <input name="Email" className="w-full p-2 rounded-sm bg-gray-300" type="email" onChange={handleChange}/>
           </div>
           <div>
             <label>CONTACT NO : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="email" />
+            <input name="contact" className="w-full p-2 rounded-sm bg-gray-300" type="email" onChange={handleChange}/>
           </div>
         </div>
 
@@ -76,15 +112,15 @@ const PersonalDetailed = () => {
           <label>GENDER</label>
           <div className="flex gap-5">
             <div>
-            <input type="radio"  name="gender"/><label>Male</label>
+            <input type="radio"  name="gender" onChange={handleChange}/><label>Male</label>
             </div>
 
             <div>
-            <input type="radio" name="gender"/><label>Female</label>
+            <input type="radio" name="gender" onChange={handleChange}/><label>Female</label>
             </div>
 
             <div>
-            <input type="radio" name="gender"/><label>Others</label>
+            <input type="radio" name="gender" onChange={handleChange}/><label>Others</label>
             </div>
           </div>
         </div>
@@ -93,22 +129,22 @@ const PersonalDetailed = () => {
 
       <div className="flex flex-col mt-3">
         <label>UPLOAD PHOTO</label>
-        <input type="file" className="border p-2 rounded-sm"/>
+        <input name="img" type="file" className="border p-2 rounded-sm" onChange={handleChange}/>
       </div>
 
       <div className="mt-5">
             <label> VALIDITY : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="validity" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 
           <div>
             <label> CARD NO : </label>
-            <input className="w-full p-2 rounded-sm bg-gray-300" type="text" />
+            <input name="cardNo" className="w-full p-2 rounded-sm bg-gray-300" type="text" onChange={handleChange}/>
           </div>
 <div>
-          <Link to="/generatedID" className="flex justify-center items-center mt-4">
-            <button to="/generatedID" className="px-5 py-2 bg-blue-500 text-white text-2xl font-bold rounded-lg">Generate</button>
-          </Link>
+          <div className="flex justify-center items-center mt-4">
+            <button type="button" className="px-5 py-2 bg-blue-500 text-white text-2xl font-bold rounded-lg" onClick={handleSubmit}>Generate</button>
+          </div>
 </div>          
 
     </div>
