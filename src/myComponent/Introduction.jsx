@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { FaArrowRight } from 'react-icons/fa';
 import idCard from "../assets/Card.png";
 
 const Introduction = () => {
@@ -20,15 +20,15 @@ const Introduction = () => {
           <div className="flex gap-4 ml-3 md:mt-14">
             <Link
               to="/template"
-              className="py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl"
+              className="flex py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl"
             >
-              Browse Templates
+              Browse Templates<FaArrowRight className="mt-5 md:mt-1 md:ml-2"/>
             </Link>
             <Link
               to="/custom"
-              className="border py-3 px-6 rounded-lg border-gray-300"
+              className="flex border py-3 px-6 rounded-lg border-gray-300"
             >
-              Build Your Own
+              Build Your Own <FaArrowRight className="text-black mt-5 md:mt-1 md:ml-2"/>
             </Link>
           </div>
         </div>
