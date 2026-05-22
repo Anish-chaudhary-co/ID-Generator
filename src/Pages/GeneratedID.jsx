@@ -10,15 +10,18 @@ const GeneratedID = () => {
 
   return (
     <>
-    <div>{submittedData.FirstName}</div>
-    <div>{submittedData.SecondName}</div>
-    <div>{submittedData.profession}</div>
-    <div>{submittedData.organization}</div>
-    <div>{submittedData.address}</div>
-    <div>{submittedData.DOB}</div>
-    <div>{submittedData.level}</div>
-    <div>{submittedData.Email}</div>
-    <div>{submittedData.contact}</div>
+    <div>Generated ID Card</div>
+    <div  className="flex flex-col gap-2 px-9 mt-4 ml-10 p-4 border rounded shadow w-96 h-[400px]">
+    <div><label htmlFor="">Name : </label>{submittedData.FirstName}</div>
+    <div><label htmlFor="">Second Name : </label>{submittedData.SecondName}</div>
+    <div><label htmlFor="">Profession : </label>{submittedData.profession}</div>
+    <div><label htmlFor="">Organization : </label>{submittedData.organization}</div>
+    <div><label htmlFor="">Address : </label>{submittedData.address}</div>
+    <div><label htmlFor="">Date of Birth : </label>{submittedData.DOB}</div>
+    <div><label htmlFor="">Level : </label>{submittedData.level}</div>
+    <div><label htmlFor="">Email : </label>{submittedData.Email}</div>
+    <div><label htmlFor="">Contact : </label>{submittedData.contact}</div>
+    </div>
     </>
   )
 }
