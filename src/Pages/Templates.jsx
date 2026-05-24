@@ -1,20 +1,36 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import selectedTemplate from "../Templates/Templates";
 
-import Templates1 from "../assets/templates1.png";
-import Templates2 from "../assets/templates2.png";
-import Templates3 from "../assets/templates3.png";
-import Templates4 from "../assets/templates4.png";
-import Templates5 from "../assets/templates5.png";
+// import Templates1 from "../assets/templates1.png";
+// import Templates2 from "../assets/templates2.png";
+// import Templates3 from "../assets/templates3.png";
+// import Templates4 from "../assets/templates4.png";
+// import Templates5 from "../assets/templates5.png";
+// { handleTemplateSelect }
 
-const Templates = ({ handleTemplateSelect }) => {
-  const handleTemplateClick = (template) => {
-    handleTemplateSelect(template);
-  };
+const Templates = () => {
+  // const handleTemplateClick = (template) => {
+  //   handleTemplateSelect(template);
+  // };
+  console.log("Selected Template in Templates.jsx:", selectedTemplate);
 
   return (
     <>
-      <div className="m-4">
+
+      <div>
+        {
+          selectedTemplate.map((template, index) => (
+            <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4 border m-2 p-2 py-4 w-97 rounded-lg shadow-lg">
+              <h1 className="text-2xl font-bold">
+                {template.templateName}
+              </h1>
+            </div>
+          ))
+        };
+      </div>
+
+      {/* <div className="m-4">
         <h1 className="text-4xl font-bold from-blue-950 to-blue-100 bg-clip-text text-transparent">
           Templates
         </h1>
@@ -77,7 +93,7 @@ const Templates = ({ handleTemplateSelect }) => {
             alt="Templates"
           />
         </Link>
-      </div>
+      </div> */}
     </>
   );
 };

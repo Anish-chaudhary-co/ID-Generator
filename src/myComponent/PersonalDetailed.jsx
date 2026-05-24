@@ -210,7 +210,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
       </div>
 
       {/* now this is for id card show reference  */}
-      <div className="border border-gray-400 shadow-lg rounded-lg p-6 m-4 h-full md:w-[600px]">
+      <div className="border border-gray-400 shadow-lg rounded-lg p-6 m-4 h-full md:w-[600px] sticky top-0">
         <h3 className="text-4xl font-bold mb-4">
           Your Id Card <br />
           Template
