@@ -3,37 +3,41 @@ import { useNavigate } from "react-router-dom";
 import { FormContext } from "../Context/Context/FormContext";
 import  inputField  from "../Templates/inputField";
 const PersonalDetailed = ({ selectedTemplate }) => {
-  // const { setSubmittedData } = useContext(FormContext);
+  const navigate = useNavigate();
+  const { setSubmittedData } = useContext(FormContext);
   // const navigate = useNavigate();
-  // const [formData, setFormData] = useState({
-  //   FirstName: "",
-  //   SecondName: "",
-  //   profession: "",
-  //   organization: "",
-  //   address: "",
-  //   DOB: "",
-  //   level: "",
-  //   Email: "",
-  //   contact: "",
-  //   gender: "",
-  //   img: "",
-  //   validity: "",
-  //   cardNo: "",
-  // });
+  const [formData, setFormData] = useState({
+    FirstName: "",
+    SecondName: "",
+    profession: "",
+    organization: "",
+    address: "",
+    DOB: "",
+    level: "",
+    Email: "",
+    contact: "",
+    gender: "",
+    img: "",
+    validity: "",
+    cardNo: "",
+  });
 
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
+  const handleChange = (e) => {
+    e.preventDefault();
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   // const handleSubmit = () => {
   //   setSubmittedData(formData);
   //   // GO TO PREVIEW PAGE
   //   navigate("/generatedID");
   // };
+  const GenerateHandle =()=>{
+    navigate("/generatedID");
+  };
 
   const filteredFields = inputField.filter((field) => selectedTemplate?.fields?.includes(field.name));
 
@@ -59,6 +63,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
                 type="radio"
                 name={field.name}
                 value={option}
+                onChange={handleChange}
               />
 
               {option}
@@ -75,6 +80,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
           type={field.type}
           name={field.name}
           placeholder={field.placeholder}
+          onChange={handleChange}
           className="w-full p-2 rounded-sm bg-gray-300"
         />
 
@@ -85,7 +91,9 @@ const PersonalDetailed = ({ selectedTemplate }) => {
 
 ))};
 <div className="flex justify-center items-center mt-4">
-    <button className="bg-blue-500 text-white p-2 rounded-sm">Generate</button>
+    <button className="bg-blue-500 text-white p-2 rounded-sm" onClick={GenerateHandle}>
+      Generate
+    </button>
 </div>
     </>
 
