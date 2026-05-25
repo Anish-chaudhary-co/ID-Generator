@@ -1,3 +1,4 @@
+
 const idCardTemplates = [
 
   // School ID Card

@@ -9,23 +9,37 @@ import selectedTemplate from "../Templates/Templates";
 // import Templates5 from "../assets/templates5.png";
 // { handleTemplateSelect }
 
-const Templates = () => {
+const Templates = ({handleTemplateClick}) => {
   // const handleTemplateClick = (template) => {
   //   handleTemplateSelect(template);
   // };
-  console.log("Selected Template in Templates.jsx:", selectedTemplate);
+
+
+  const handleClick =(item)=>{
+    handleTemplateClick(item);
+
+  }
+
+  // const [takeDetail,setTakeDetail] = useState(null);
+  // const handleTemplateClick =(template)=>{
+  //     setTakeDetail(template);
+  // }
 
   return (
     <>
 
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-3">
         {
           selectedTemplate.map((template, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4 border m-2 p-2 py-4 w-97 rounded-lg shadow-lg">
-              <h1 className="text-2xl font-bold">
-                {template.templateName}
+            <Link key={index} to="/personalDetailed">
+              <div 
+                onClick={()=>{handleClick(template)}}
+                className="gap-4 border m-4 p-2 w-95 md:w-97 h-99 md:h-90 rounded-lg shadow-lg">
+                <h1 className="text-2xl font-bold">
+                  {template.templateName}
               </h1>
-            </div>
+            </div>  
+            </Link>
           ))
         };
       </div>

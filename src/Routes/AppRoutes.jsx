@@ -14,9 +14,10 @@ import GeneratedID from "../Pages/GeneratedID";
 
 const AppRoutes = () => {
   const [selectedTemplate, setSelectedTemplate] = useState();
-  const handleTemplateSelect = (template) => {
-    setSelectedTemplate(template);
-  };
+  console.log("Selected Template in AppRoutes.jsx:", selectedTemplate);
+  // const handleTemplateSelect = (template) => {
+  //   setSelectedTemplate(template);
+  // };
   return (
     <>
       <Routes>
@@ -34,7 +35,7 @@ const AppRoutes = () => {
         <Route path="/" element={<EmptyLayout />}>
           {/* this is for empty layout without navbar and footer */}
           <Route path="personalDetailed" element={<PersonalDetailed selectedTemplate={selectedTemplate} />} />
-          <Route path="template" element={<Template handleTemplateSelect={handleTemplateSelect} />} />
+          <Route path="template" element={<Template handleTemplateClick={setSelectedTemplate} />} />
         </Route>
 
       </Routes>
