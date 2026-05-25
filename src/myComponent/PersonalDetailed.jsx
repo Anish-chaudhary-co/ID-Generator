@@ -39,24 +39,51 @@ const PersonalDetailed = ({ selectedTemplate }) => {
 
   return (
     <>
-    {filteredFields.map((field) => (
+   {filteredFields.map((field) => (
 
-  <div key={field.name}>
+  <div key={field.name} className="flex flex-col gap-2 mb-4">
 
-    <label>{field.label}</label>
+    <label className="font-bold"> {field.label} </label>
 
-    <input
-      type={field.type}
-      name={field.name}
-      className="w-full p-2 rounded-sm bg-gray-300"
-      placeholder={field.placeholder}
-      // onChange={handleChange}
-    />
+    {
+      field.type === "radio" ? (
 
+        <div className="flex gap-5">
+
+          {field.options.map((option) => (
+
+            <label key={option} className="flex items-center gap-2">
+
+              <input
+              className="form-radio"
+                type="radio"
+                name={field.name}
+                value={option}
+              />
+
+              {option}
+
+            </label>
+
+          ))}
+
+        </div>
+
+      ) : (
+
+        <input
+          type={field.type}
+          name={field.name}
+          placeholder={field.placeholder}
+          className="w-full p-2 rounded-sm bg-gray-300"
+        />
+
+      )
+    }
 
   </div>
 
-))}
+))};
 <div className="flex justify-center items-center mt-4">
     <button className="bg-blue-500 text-white p-2 rounded-sm">Generate</button>
 </div>
