@@ -5,6 +5,7 @@ import  inputField  from "../Templates/inputField";
 const PersonalDetailed = ({ selectedTemplate }) => {
   const navigate = useNavigate();
   const { setSubmittedData } = useContext(FormContext);
+  const { submittedData } = useContext(FormContext);
   // const navigate = useNavigate();
   const [formData, setFormData] = useState({
     FirstName: "",
@@ -39,6 +40,8 @@ const PersonalDetailed = ({ selectedTemplate }) => {
   const GenerateHandle =()=>{
     navigate("/generatedID");
     setSubmittedData(formData);
+    
+    
   };
 
   const filteredFields = inputField.filter((field) => selectedTemplate?.fields?.includes(field.name));
