@@ -27,7 +27,8 @@ const PersonalDetailed = ({ selectedTemplate }) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
+    
+    })
   };
 
   // const handleSubmit = () => {
@@ -37,6 +38,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
   // };
   const GenerateHandle =()=>{
     navigate("/generatedID");
+    setSubmittedData(formData);
   };
 
   const filteredFields = inputField.filter((field) => selectedTemplate?.fields?.includes(field.name));
