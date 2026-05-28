@@ -8,6 +8,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
   const { submittedData } = useContext(FormContext);
   // const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    templateName: selectedTemplate?.name || "",
     FirstName: "",
     SecondName: "",
     profession: "",
