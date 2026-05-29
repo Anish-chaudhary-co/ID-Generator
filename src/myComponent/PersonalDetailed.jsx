@@ -39,6 +39,10 @@ const PersonalDetailed = ({ selectedTemplate }) => {
   //   navigate("/generatedID");
   // };
   const GenerateHandle =()=>{
+    if (!formData.FirstName || !formData.SecondName || !formData.organization || !formData.address || !formData.DOB || !formData.Email || !formData.contact || !formData.gender || !formData.validity || !formData.cardNo) {
+      alert("Please fill in the required fields: " + selectedTemplate.fields.join(", "));
+      return;
+    }
     navigate("/generatedID");
     setSubmittedData(formData);
     
