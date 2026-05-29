@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormContext } from "../Context/Context/FormContext";
-import  inputField  from "../Templates/inputField";
+import inputField from "../Templates/inputField";
 const PersonalDetailed = ({ selectedTemplate }) => {
   const navigate = useNavigate();
   const { setSubmittedData } = useContext(FormContext);
@@ -29,8 +29,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    
-    })
+    });
   };
 
   // const handleSubmit = () => {
@@ -38,76 +37,100 @@ const PersonalDetailed = ({ selectedTemplate }) => {
   //   // GO TO PREVIEW PAGE
   //   navigate("/generatedID");
   // };
-  const GenerateHandle =()=>{
-    if (!formData.FirstName || !formData.SecondName || !formData.organization || !formData.address || !formData.DOB || !formData.Email || !formData.contact || !formData.gender || !formData.validity || !formData.cardNo) {
-      alert("Please fill in the required fields: " + selectedTemplate.fields.join(", "));
+  const GenerateHandle = () => {
+    if (
+      !formData.FirstName ||
+      !formData.SecondName ||
+      !formData.organization ||
+      !formData.address ||
+      !formData.DOB ||
+      !formData.Email ||
+      !formData.contact ||
+      !formData.gender ||
+      !formData.validity ||
+      !formData.cardNo
+    ) {
+      alert(
+        "Please fill in the required fields: " +
+          selectedTemplate.fields.join(", "),
+      );
       return;
     }
     navigate("/generatedID");
     setSubmittedData(formData);
-    
-    
   };
 
-  const filteredFields = inputField.filter((field) => selectedTemplate?.fields?.includes(field.name));
+  const filteredFields = inputField.filter((field) =>
+    selectedTemplate?.fields?.includes(field.name),
+  );
 
   return (
     <>
-   {filteredFields.map((field) => (
+      {filteredFields.map((field) => (
+        <div key={field.name} className="flex flex-col gap-2 mb-4">
+          <label className="font-bold"> {field.label} </label>
 
-  <div key={field.name} className="flex flex-col gap-2 mb-4">
+          {field.type === "radio" ? (
+            <div className="flex gap-5">
+              {field.options.map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    className="form-radio"
+                    type="radio"
+                    name={field.name}
+                    value={option}
+                    onChange={handleChange}
+                  />
 
-    <label className="font-bold"> {field.label} </label>
-
-    {
-      field.type === "radio" ? (
-
-        <div className="flex gap-5">
-
-          {field.options.map((option) => (
-
-            <label key={option} className="flex items-center gap-2">
-
-              <input
-              className="form-radio"
-                type="radio"
-                name={field.name}
-                value={option}
-                onChange={handleChange}
-              />
-
-              {option}
-
-            </label>
-
-          ))}
-
+                  {option}
+                </label>
+              ))}
+            </div>
+          ) : (
+            <input
+              type={field.type}
+              name={field.name}
+              placeholder={field.placeholder}
+              onChange={handleChange}
+              className="w-full p-2 rounded-sm bg-gray-300"
+            />
+          )}
         </div>
-
-      ) : (
-
-        <input
-          type={field.type}
-          name={field.name}
-          placeholder={field.placeholder}
-          onChange={handleChange}
-          className="w-full p-2 rounded-sm bg-gray-300"
-        />
-
-      )
-    }
-
-  </div>
-
-))};
-<div className="flex justify-center items-center mt-4">
-    <button className="bg-blue-500 text-white p-2 rounded-sm" onClick={GenerateHandle}>
-      Generate
-    </button>
-</div>
+      ))}
+      ;
+      <div className="flex justify-center items-center mt-4">
+        <button
+          className="bg-blue-500 text-white p-2 rounded-sm"
+          onClick={GenerateHandle}
+        >
+          Generate
+        </button>
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <button
+          className="bg-blue-500 text-white p-2 rounded-sm"
+          onClick={GenerateHandle}
+        >
+          Generate
+        </button>
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <button
+          className="bg-blue-500 text-white p-2 rounded-sm"
+          onClick={GenerateHandle}
+        >
+          Generate
+        </button>
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <button
+          className="bg-blue-500 text-white p-2 rounded-sm"
+          onClick={GenerateHandle}
+        >
+          Generate
+        </button>
+      </div>
     </>
-
-
 
     // <div className="flex flex-col md:flex-row gap-24 mt-4">
     //   <div className="m-4 md:ml-29 border border-gray-400 shadow-lg rounded-lg p-6 md:w-[500px]">
