@@ -35,7 +35,7 @@ const [templatePreview, setTemplatePreview] = useState(null);
           className="fixed inset-0 bg-black/50 bg-opacity-50 flex justify-center items-center">
             <div 
             onClick={(e)=>e.stopPropagation()}
-            className="relative bg-white p-4 rounded-lg shadow-lg py-15 ">
+            className="relative bg-white p-4 rounded-lg shadow-lg py-13 ">
               <div className="flex justify-between items-center mb-4">
               <h2 className="font-bold text-2xl">{templatePreview.templateName}</h2>
               <button
@@ -48,7 +48,7 @@ const [templatePreview, setTemplatePreview] = useState(null);
 
               <div>
                 <Link to="/personalDetailed">
-                <button className="absolute bottom-2 right-4 bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold px-4 py-2 rounded-sm">
+                <button onClick={() => handleClick(templatePreview)} className="absolute bottom-2 right-4 bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold px-4 py-2 rounded-sm">
                   Use Template
                 </button>
                 </Link>

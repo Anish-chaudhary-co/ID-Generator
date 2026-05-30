@@ -16,15 +16,16 @@ console.log(submittedData);
   return (
     <>
     <div className='text-3xl md:text-4xl font-bold'>Generated ID Card</div>
+    <h2 className='text-green-400'>Your ...... ID card is ready now. You can print it now or save it.</h2>
     <p>{submittedData.templateName}</p>
-    <div className="border rounded-md shadow-md w-full md:w-85 m-2 md:ml-20 mt-30"> 
-      <div className="border bg-green-500 text-white">
-      {submittedData.organization && <p className="flex justify-center items-center font-bold text-3xl">{submittedData.organization}</p>} 
+    <div className="rounded-xl bg-amber-300 shadow-md w-full py-4 md:h-97 md:w-85 m-2 md:ml-20 mt-30"> 
+      <div className="bg-green-500">
+      {submittedData.organization && <p className="flex justify-center items-center font-bold text-3xl text-white">{submittedData.organization}</p>} 
       {submittedData.address && <p className="flex justify-center items-center text-gray-500">{submittedData.address}</p>} 
       </div>
 
     <div className="flex gap-2 p-2">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 font-bold">
       {submittedData.FirstName && submittedData.SecondName && ( 
         <h2>Name :  {submittedData.FirstName} {submittedData.SecondName}</h2>
       )}
@@ -47,12 +48,12 @@ console.log(submittedData);
     </div>
     </div>
 
-    <p className="text-center text-gray-500 bg-blue-500 text-white">If found return to organization.</p>
+    <p className="text-center text-gray-500 bg-blue-500 text-white mt-8">If found return to organization.</p>
 
     </div>
 
-    <div className="flex justify-center items-center mt-4">
-    <button className="bg-blue-500 text-white p-2 rounded-sm" onClick={() => window.print()}>
+    <div className="flex justify-center items-center mt-8">
+    <button className="bg-blue-500 text-white p-2 rounded-lg" onClick={() => window.print()}>
       Print ID
     </button>
     </div>
