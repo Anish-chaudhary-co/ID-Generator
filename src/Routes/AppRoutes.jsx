@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import EmptyLayout from "../Layout/EmptyLayout";
@@ -28,16 +28,20 @@ const AppRoutes = () => {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="generatedID" element={<GeneratedID />} />
-
-
+            <Route
+            path="template"
+            element={<Template handleTemplateClick={setSelectedTemplate} />}
+          />
         </Route>
 
         <Route path="/" element={<EmptyLayout />}>
           {/* this is for empty layout without navbar and footer */}
-          <Route path="personalDetailed" element={<PersonalDetailed selectedTemplate={selectedTemplate} />} />
-          <Route path="template" element={<Template handleTemplateClick={setSelectedTemplate} />} />
+          <Route
+            path="personalDetailed"
+            element={<PersonalDetailed selectedTemplate={selectedTemplate} />}
+          />
+        
         </Route>
-
       </Routes>
     </>
   );
