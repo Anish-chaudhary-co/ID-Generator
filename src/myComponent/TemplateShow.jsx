@@ -4,11 +4,11 @@ import templates from '../assets/templates.png';
 
 const Template = () => {
   return (
-    <div className='border border-gray-300 m-5 rounded-lg bg-gray-300'>
+    <div className='border border-gray-300 m-5 rounded-lg bg-gray-300 shadow-lg'>
       <div className='flex justify-end text-red-500 mr-9'>
         <Link to="/template" className=''>View All</Link>
       </div>
-     <img className='' src={templates} alt="Templates"/>
+     <img className='w-full h-full object-cover' src={templates} alt="Templates"/>
     </div>
   )
 }

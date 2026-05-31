@@ -36,9 +36,7 @@ const PersonalDetailed = ({ selectedTemplate }) => {
   const GenerateHandle = () => {
     const isEmpty = (value) =>
   value === undefined ||
-  value === null ||
-  value.toString().trim() === "";
-     if (
+  value === null ||  value.toString().trim() === "";     if (
       isEmpty(formData.FirstName) ||
       isEmpty(formData.SecondName) ||
       isEmpty(formData.organization) ||
