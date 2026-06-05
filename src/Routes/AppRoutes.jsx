@@ -10,7 +10,8 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import PersonalDetailed from "../myComponent/PersonalDetailed";
 import Template from "../Pages/Templates";
-import GeneratedID from "../Pages/GeneratedID";
+import GeneratedID from "../Pages/GeneratedID"; 
+import Register from "../Pages/Register"
 
 const AppRoutes = () => {
   const [selectedTemplate, setSelectedTemplate] = useState();
@@ -32,6 +33,7 @@ const AppRoutes = () => {
             path="template"
             element={<Template handleTemplateClick={setSelectedTemplate} />}
           />
+          <Route path="register" element={<Register/>}/>
         </Route>
 
         <Route path="/" element={<EmptyLayout />}>
