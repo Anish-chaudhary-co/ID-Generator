@@ -1,8 +1,9 @@
 import React,{useState} from "react";
 import {FaTimes} from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Login from './Login.jsx';
 
-const Navbar = () => {
+const Navbar = ({handleLogin}) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -49,6 +50,12 @@ const Navbar = () => {
         <Link to="/about">About us</Link>
       </div>
 
+      {/* login button */}
+      <div className="p-2 bg-blue-400 rounded-md hover:bg-blue-500">
+        <button onClick={handleLogin} className="font-bold text-white">Login</button>
+
+      </div>
+
     </div>
   </div>
 </div>
@@ -78,20 +85,25 @@ const Navbar = () => {
      <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
 
       
-      <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-blue-500 text-center m-2 rounded-md py-5 px-full">
         <Link to="/">Home</Link>
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-blue-500 text-center m-2 rounded-md py-5 px-full">
         <Link to="/template">Templates</Link >
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-green-200 flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-blue-500 text-center m-2 rounded-md py-5 px-full">
         <Link to="/contact">Contact us</Link>
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-green-200  flex items-center justify-center rounded-md py-5 px-full">
+      <div className="cursor-pointer hover:text-white hover:bg-blue-500  text-center m-2 rounded-md py-5 px-full">
         <Link to="/about">About us</Link>
+      </div>
+
+      {/* login button */}
+      <div className="p-2 m-2 text-center bg-blue-400 rounded-md hover:bg-blue-500">
+        <button className="font-bold text-white">Login</button>
       </div>
 
     </div>
