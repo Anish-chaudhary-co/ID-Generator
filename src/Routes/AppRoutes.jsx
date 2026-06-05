@@ -11,14 +11,11 @@ import Contact from "../Pages/Contact";
 import PersonalDetailed from "../myComponent/PersonalDetailed";
 import Template from "../Pages/Templates";
 import GeneratedID from "../Pages/GeneratedID"; 
-import Register from "../Pages/Register"
+import Register from "../Pages/Register/Register"
 
 const AppRoutes = () => {
   const [selectedTemplate, setSelectedTemplate] = useState();
   console.log("Selected Template in AppRoutes.jsx:", selectedTemplate);
-  // const handleTemplateSelect = (template) => {
-  //   setSelectedTemplate(template);
-  // };
   return (
     <>
       <Routes>

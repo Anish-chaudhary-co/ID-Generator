@@ -70,6 +70,7 @@ const Navbar = ({handleLogin}) => {
           left-0
           h-screen
           w-52
+          z-60
           bg-gray-200
           shadow-lg
           shadow-gray-600
@@ -102,7 +103,7 @@ const Navbar = ({handleLogin}) => {
       </div>
 
       {/* login button */}
-      <div className="p-2 m-2 text-center bg-blue-400 rounded-md hover:bg-blue-500">
+      <div onClick={handleLogin}  className="p-2 m-2 text-center bg-blue-400 rounded-md hover:bg-blue-500">
         <button className="font-bold text-white">Login</button>
       </div>
 

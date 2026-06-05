@@ -19,7 +19,7 @@ const Login = ({handleLogin}) => {
                 <input type="submit" className='p-2 py-2 text-white bg-blue-400 hover:bg-blue-500 rounded-lg font-bold' />
 
                 <div className='text-center mb-5'>
-                    <span>Don't have an account?<Link to="/register" onClick={handleLogin} className='text-purple-600'> Register.</Link></span>
+                    <span>Don't have an account?<Link to="/register" onClick={handleLogin} className='text-purple-600'> Sign Up</Link></span>
                 </div>
             </form>
             
