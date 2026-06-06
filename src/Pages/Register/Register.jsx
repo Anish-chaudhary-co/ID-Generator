@@ -4,10 +4,14 @@ import { FaGoogle } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
 
 const Register = () => {
+
+    const handleRegisterDB =()=>{
+
+    }
     
   return (
     <div className='flex items-center justify-center mt-30 min-h-screen bg-purple-300'>
-        <form action="http://localhost/register.php" method='POST' className='border p-4 rounded-lg w-90 md:w-97 flex flex-col gap-8 bg-purple-600'>
+        <form action="http://localhost/IdCard/register.php" method='POST' className='border p-4 rounded-lg w-90 md:w-97 flex flex-col gap-8 bg-purple-600'>
             <div className='flex flex-col'>
                 <label htmlFor="" className='font-bold text-white'>Full Name</label>
                 <input type="text"className='border border-white backdrop-blur-sm bg-black/20 rounded-lg p-2' placeholder='Enter your full name' name='username' />

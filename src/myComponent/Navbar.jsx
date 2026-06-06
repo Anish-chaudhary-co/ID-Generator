@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import {FaTimes} from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Login from './Login.jsx';
+import Login from './Login/Login.jsx';
 
 const Navbar = ({handleLogin}) => {
   const [open, setOpen] = useState(false);
@@ -70,7 +70,7 @@ const Navbar = ({handleLogin}) => {
           left-0
           h-screen
           w-52
-          z-60
+          z-40
           bg-gray-200
           shadow-lg
           shadow-gray-600
