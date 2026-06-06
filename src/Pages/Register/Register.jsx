@@ -12,6 +12,13 @@ const Register = () => {
 
         const formData = new FormData();
 
+        const response = await fetch("http://localhost/ID-Backend-To-Connect-To-Database/register.php",
+            {
+                method : "POST",
+                body : formData
+            }
+        );
+
     }
     
   return (
