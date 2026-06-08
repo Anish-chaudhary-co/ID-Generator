@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FormContext } from "../Context/Context/FormContext"; 
 
 const GeneratedID = () => {
@@ -12,11 +12,17 @@ console.log(submittedData);
     return <p>No form data yet. Fill the form and click Generate.</p>;
   }
 
+  const vertically = "";
+  const horizontally = "";
+
+  const [landScape,setLandScape] = useState("");
+  console.log(landScape);
+
 
   return (
     <>
     <div className='text-3xl md:text-4xl font-bold'>Generated ID Card</div>
-    <h2 className='text-green-400'>Your ...... ID card is ready now. You can print it now or save it.</h2>
+    <h2 className='text-white'>Your ...... ID card is ready now. You can print it now or save it.</h2>
     <p>{submittedData.templateName}</p>
     <div className="rounded-xl bg-amber-300 shadow-md w-full py-4 md:h-97 md:w-85 m-2 md:ml-20 mt-30"> 
       <div className="bg-green-500">
@@ -48,12 +54,17 @@ console.log(submittedData);
     </div>
     </div>
 
-    <p className="text-center text-gray-500 bg-blue-500 text-white mt-8">If found return to organization.</p>
+    <p className="text-center text-gray-500 bg-blue-500  mt-8">If found return to organization.</p>
 
     </div>
 
+    <div className='flex gap-6 text-center justify-center mt-10'>
+      <button onClick={()=>{setLandScape(vertically)}} className='py-2 px-2 rounded-lg bg-blue-500 hover:bg-blue-600'>Vertical ID</button>
+      <button onClick={()=>{setLandScape(horizontally)}} className='py-2 px-2 rounded-lg bg-blue-500 hover:bg-blue-600'>Horizontal ID</button>
+    </div>
+
     <div className="flex justify-center items-center mt-8">
-    <button className="bg-blue-500 text-white p-2 rounded-lg" onClick={() => window.print()}>
+    <button className="bg-red-500 hover:bg-red-700 text-white p-2 rounded-lg" onClick={() => window.print()}>
       Print ID
     </button>
     </div>

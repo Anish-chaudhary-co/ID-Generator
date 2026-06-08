@@ -18,18 +18,18 @@ const Footer = () => {
 
         <div className='flex flex-col gap-5'>
             <h1 className='text-xl font-bold'>Product</h1>
-            <span className='cursor-pointer hover:text-red-400'>Templates</span>
-            <span className='cursor-pointer hover:text-red-400'>Features</span>
-            <span className='cursor-pointer hover:text-red-400'>Pricing</span>
-            <span className='cursor-pointer hover:text-red-400'>Enterprise</span>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Templates</a>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Features</a>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Pricing</a>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Enterprise</a>
         </div>
 
         <div className='flex flex-col gap-5'>
             <h1 className='text-xl font-bold'>Resources</h1>
-            <span className='cursor-pointer hover:text-red-400'>Help Center</span>
-            <span className='cursor-pointer hover:text-red-400'>Design Guide</span>
-            <span className='cursor-pointer hover:text-red-400'>API Documentation</span>
-            <span className='cursor-pointer hover:text-red-400'>Blog</span>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Help Center</a>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Design Guide</a>
+            <a href='#' className='cursor-pointer hover:text-red-400'>API Documentation</a>
+            <a href='#' className='cursor-pointer hover:text-red-400'>Blog</a>
         </div>
 
         <div className='flex flex-col gap-5 border p-4 bg-gray-300 rounded-lg'>

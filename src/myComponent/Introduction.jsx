@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaArrowRight } from 'react-icons/fa';
 import idCard from "../assets/Card.png";
 
@@ -17,19 +17,19 @@ const Introduction = () => {
             our premium templates or build your own custom design with out
             drag-and-drop editor.
           </span>
-          <div className="flex gap-4 ml-3 md:mt-14">
-            <Link
+          <div className="flex gap-4 md:mt-14">
+            <NavLink
               to="/template"
               className="flex py-3 px-6 rounded-lg bg-amber-500 text-white shadow-2xl"
             >
               Browse Templates<FaArrowRight className="mt-5 md:mt-1 md:ml-2"/>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/custom"
               className="flex border py-3 px-6 rounded-lg border-gray-300"
             >
               Build Your Own <FaArrowRight className="text-black mt-5 md:mt-1 md:ml-2"/>
-            </Link>
+            </NavLink>
           </div>
         </div>
 

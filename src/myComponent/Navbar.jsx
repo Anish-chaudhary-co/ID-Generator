@@ -80,7 +80,7 @@ const Navbar = ({ handleLogin }) => {
             </NavLink>
 
             {/* login button */}
-            <div className="p-2 bg-blue-400 rounded-md hover:bg-blue-500">
+            <div className="p-2 bg-red-400 rounded-md hover:bg-red-500">
               <button onClick={handleLogin} className="font-bold text-white">
                 Login
               </button>
@@ -89,7 +89,7 @@ const Navbar = ({ handleLogin }) => {
         </div>
       </div>
 
-      <div className="flex justify-between md:hidden items-center shadow-gray-200 shadow-lg px-5 py-4">
+      <div className="flex justify-between bg-blue-300 md:hidden items-center px-5 py-4">
         <h1>IDGen</h1>
         <button className="text-2xl" onClick={() => setOpen(!open)}>
           ☰
@@ -98,7 +98,7 @@ const Navbar = ({ handleLogin }) => {
 
         <div
           className={`fixed
-          bg-blue-400
+          bg-blue-300
           top-0
           left-0
           h-screen
