@@ -1,16 +1,21 @@
-import React,{useState} from "react";
-import {FaTimes} from "react-icons/fa";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Login from './Login/Login.jsx';
+import Login from "./Login/Login.jsx";
 
-const Navbar = ({handleLogin}) => {
+const Navbar = ({ handleLogin }) => {
   const [open, setOpen] = useState(false);
+
+  const ActiveLink = "text-white bg-slate-800";
+  const NormalLink = "hover:text-gray-500";
 
   return (
     <>
-    <div>
-  <div
-    className="
+      <div>
+        <div
+          className="
+    bg-blue-300
       hidden
       md:flex flex-row
       justify-start md:justify-between
@@ -22,99 +27,161 @@ const Navbar = ({handleLogin}) => {
       shadow-gray-300
       shadow-lg
     "
-  >
-    
-    {/* Logo */}
-    <div className="mb-10 md:mb-0">
-      <span className="font-bold text-xl">
-        IDGen
-      </span>
-    </div>
+        >
+          {/* Logo */}
+          <div className="mb-10 md:mb-0">
+            <span className="font-bold text-xl">IDGen</span>
+          </div>
 
-    {/* Menu */}
-    <div className="flex flex-col md:flex-row gap-10 md:gap-20">
-      
-      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <Link to="/">Home</Link>
+          {/* Menu */}
+          <div className="flex flex-col md:flex-row gap-10 md:gap-20">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `cursor-pointer h-9 w-20 flex items-center justify-center rounded-md ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/template"
+              className={({ isActive }) =>
+                `cursor-pointer h-9 w-20 flex items-center justify-center rounded-md ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              Templates
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `cursor-pointer h-9 w-20 flex items-center justify-center rounded-md ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              Contact
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `cursor-pointer h-9 w-20 flex items-center justify-center rounded-md ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              About us
+            </NavLink>
+
+            {/* login button */}
+            <div className="p-2 bg-blue-400 rounded-md hover:bg-blue-500">
+              <button onClick={handleLogin} className="font-bold text-white">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <Link to="/template">Templates</Link>
-      </div>
-
-      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <Link to="/contact">Contact us</Link>
-      </div>
-
-      <div className="cursor-pointer hover:text-white hover:bg-red-500 h-9 w-20 flex items-center justify-center rounded-md">
-        <Link to="/about">About us</Link>
-      </div>
-
-      {/* login button */}
-      <div className="p-2 bg-blue-400 rounded-md hover:bg-blue-500">
-        <button onClick={handleLogin} className="font-bold text-white">Login</button>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div className="flex justify-between md:hidden items-center shadow-gray-200 shadow-lg px-5 py-4">
-  <h1 >IDGen</h1>
-      <button className="text-2xl" onClick={()=>setOpen(!open)}>☰</button>
+      <div className="flex justify-between md:hidden items-center shadow-gray-200 shadow-lg px-5 py-4">
+        <h1>IDGen</h1>
+        <button className="text-2xl" onClick={() => setOpen(!open)}>
+          ☰
+        </button>
 
 
-<div className=  {`fixed
+        <div
+          className={`fixed
+          bg-blue-400
           top-0
           left-0
           h-screen
           w-52
           z-40
-          bg-gray-200
           shadow-lg
           shadow-gray-600
-          rounded-2xl
           transform
           transition-transform
           duration-300
           md:hidden
           ${open ? "translate-x-0" : "-translate-x-full"}
-        `}>
-      <FaTimes className="text-2xl absolute top-5 right-5 cursor-pointer" onClick={()=>setOpen(false)}/>
+        `}
+        >
+          <div className="flex flex-between m-2">
+            <h2 className="font-bold text-2xl">IDGen</h2>
+          <FaTimes
+            className="text-2xl absolute top-2 right-2 cursor-pointer"
+            onClick={() => setOpen(false)}
+          />
+          </div>
 
-     <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
+          <div className="flex flex-col fixed top-16 left-0 right-0 md:flex-row md:gap-20">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+        `cursor-pointer m-2 rounded-md py-5 px-full text-center
+                 ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              Home
+            </NavLink>
 
-      
-      <div className="cursor-pointer hover:text-white hover:bg-blue-500 text-center m-2 rounded-md py-5 px-full">
-        <Link to="/">Home</Link>
+            <NavLink
+              to="/template"
+              className={({ isActive }) =>
+        `cursor-pointer m-2 rounded-md py-5 px-full text-center
+                 ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              Templates
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+        `cursor-pointer m-2 rounded-md py-5 px-full text-center
+                 ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              Contact
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+        `cursor-pointer m-2 rounded-md py-5 px-full text-center
+                 ${
+                  isActive ? ActiveLink : NormalLink
+                }`
+              }
+            >
+              About us
+            </NavLink>
+
+            {/* login button */}
+            <div
+              onClick={handleLogin}
+              className="p-2 m-2 text-center bg-slate-700 rounded-md hover:bg-slate-500"
+            >
+              <button className="font-bold text-white">Login</button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="cursor-pointer hover:text-white hover:bg-blue-500 text-center m-2 rounded-md py-5 px-full">
-        <Link to="/template">Templates</Link >
-      </div>
-
-      <div className="cursor-pointer hover:text-white hover:bg-blue-500 text-center m-2 rounded-md py-5 px-full">
-        <Link to="/contact">Contact us</Link>
-      </div>
-
-      <div className="cursor-pointer hover:text-white hover:bg-blue-500  text-center m-2 rounded-md py-5 px-full">
-        <Link to="/about">About us</Link>
-      </div>
-
-      {/* login button */}
-      <div onClick={handleLogin}  className="p-2 m-2 text-center bg-blue-400 rounded-md hover:bg-blue-500">
-        <button className="font-bold text-white">Login</button>
-      </div>
-
-    </div>
-
-</div>
-</div>
-</>
+    </>
   );
 };
 
 export default Navbar;
-
-

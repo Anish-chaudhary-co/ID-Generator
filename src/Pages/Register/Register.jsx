@@ -7,19 +7,19 @@ const Register = () => {
     const [register,setLogin] = useState(true);
 
 
-    const handleRegisterDB =(e)=>{
-        e.preventDefault();
+    // const handleRegisterDB =(e)=>{
+    //     e.preventDefault();
 
-        const formData = new FormData();
+    //     const formData = new FormData();
 
-        const response = await fetch("http://localhost/ID-Backend-To-Connect-To-Database/register.php",
-            {
-                method : "POST",
-                body : formData
-            }
-        );
+    //     const response = await fetch("http://localhost/ID-Backend-To-Connect-To-Database/register.php",
+    //         {
+    //             method : "POST",
+    //             body : formData
+    //         }
+    //     );
 
-    }
+    // }
     
   return (
     <>
@@ -27,7 +27,7 @@ const Register = () => {
     <>
     <h2 className='text-4xl font-bold ml-6 mt-10'>Sign Up</h2>
     <div className='flex flex-col items-center justify-center md:justify-start md:ml-40 min-h-screen'>
-        <form action="http://localhost/IdCard/register.php" method='POST' className='border p-4 rounded-lg w-90 md:w-97 flex flex-col gap-8 bg-gray-300'>
+        <form action="http://localhost/ID-Backend-To-Connect-To-Database/register.php" method='POST' className='border p-4 rounded-lg w-90 md:w-97 flex flex-col gap-8 bg-gray-300'>
            <h2 className='text-2xl font-bold text-center mt-6'>Create an account</h2>
             <div className='flex flex-col'>
                 <label htmlFor="" className='font-bold'>Full Name</label>
